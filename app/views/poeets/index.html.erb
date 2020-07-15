@@ -1,0 +1,34 @@
+<header class="poeet-header">
+  <h1 class="text-3d">Poety</h1>
+</header>
+<section class="poetry-section">
+  <div class="poeet-notice">
+    <p class="flash"><%= notice %></p>
+  </div>
+  <div><%= @user.name %></div>
+  <div class="modal fade" id="poeet-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+    <div>
+      <%= link_to 'ポイートする', new_poeet_path , remote: true, class: "poeet-btn poeet-btn-big" %>
+      <% @poeets.each do |poeet| %>
+        <div class="poeet-box">
+          <div class = "poeet-body">
+            <div class="poeet-content">
+              <p class="poeet-text"> <%= poeet.content %></p>
+            </div>
+          </div>
+          <div class="poeet-footer">
+            <div class="poeet-edit">
+              <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>
+            </div>
+            <div class = "poeet-delete">
+              <%= link_to "削除",poeet_path(poeet.id),method: :delete,data: {confirm: '本当に削除していいですか？'},remote: true,class: "poeet-btn" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="copyright"><small>© 2020 INKFISH</small></div>
+</footer>

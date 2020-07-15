@@ -1,0 +1,35 @@
+<div class="modal-dialog " role="document">
+  <div class=" modal-content poeet-dialog" >
+    <%= form_with(model: @poeet,remote: true , url: choose_new_or_edit,method: confirm_form_method,)  do |form| %>
+      <div class="modal-header">
+        <% if @poeet.id? %>
+          <h5 class="modal-title" id="exampleModalLabel">ポイート編集</h5>
+        <% else %>
+          <h5 class="modal-title" id="exampleModalLabel">新規ポイート</h5>
+        <% end %>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% if @poeet.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @poeet.errors.count %>件のエラーがあります。</h2>
+          <ul>
+            <% @poeet.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="modal-body">
+        <div class="form-group field">
+          <%= form.text_area :content,class: "poeet-text-area" %>
+        </div>
+      </div>
+      <div class="modal-footer actions ">
+        <button type="button" class="poeet-btn" data-dismiss="modal">閉じる</button>
+        <%= form.submit('確認',class: 'poeet-btn') %>
+      </div>
+    <% end %>
+  </div>
+</div>
