@@ -25,7 +25,7 @@ h1,
 h5 {
   margin-bottom: 40px;
   font-weight: 700;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 section {
@@ -34,7 +34,6 @@ section {
 }
 
 footer {
-
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -69,34 +68,32 @@ footer {
   padding: 1.5em 5em;
   background: #efefef;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #444;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: .2s ease-in-out;
-  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
-    -6px -6px 10px rgba(255, 255, 255, .5),
-    6px 6px 8px rgba(255, 255, 255, .075),
-    6px 6px 10px rgba(0, 0, 0, .15);
+  transition: 0.2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.7),
+    -6px -6px 10px rgba(255, 255, 255, 0.5),
+    6px 6px 8px rgba(255, 255, 255, 0.075), 6px 6px 10px rgba(0, 0, 0, 0.15);
   font-family: 'Noto Serif JP', serif;
 }
 
 .poeet-btn:hover {
-  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
-    -2px -2px 4px rgba(255, 255, 255, .4),
-    2px 2px 2px rgba(255, 255, 255, .05),
-    2px 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+    -2px -2px 4px rgba(255, 255, 255, 0.4),
+    2px 2px 2px rgba(255, 255, 255, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .poeet-btn:active {
-  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
-    inset -2px -2px 4px rgba(255, 255, 255, .5),
-    inset 2px 2px 2px rgba(255, 255, 255, .075),
-    inset 2px 2px 4px rgba(0, 0, 0, .15);
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .poeet-btn-big {
@@ -104,7 +101,6 @@ footer {
   // text-align: center;
   margin-left: 20px;
   margin-right: 20px;
-
 }
 
 .poeet-btn-small {
@@ -129,8 +125,7 @@ footer {
 .poeet-box {
   border-radius: 27px;
   background: #efefef;
-  box-shadow: 20px 20px 60px #cbcbcb,
-    -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #cbcbcb, -20px -20px 60px #ffffff;
   display: block;
   position: relative;
   // height: 200px;
@@ -175,7 +170,7 @@ footer {
   font-family: 'Noto Serif JP', serif;
   color: #444;
   font-weight: 700;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   text-align: left;
   height: 250px;
   word-break: break-all;
@@ -203,19 +198,15 @@ footer {
 .poeet-dialog {
   border-radius: 27px;
   background: #efefef;
-  box-shadow: 20px 20px 60px #cbcbcb,
-    -20px -20px 60px #ffffff;
-
-
+  box-shadow: 20px 20px 60px #cbcbcb, -20px -20px 60px #ffffff;
 }
 
 .modal-title {
   color: #444;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   font-family: 'Noto Serif JP', serif;
-
 }
 
 .modal-backdrop {
@@ -225,7 +216,6 @@ footer {
 
 .modal-content {
   border: none;
-
 }
 
 .modal-footer {
@@ -241,7 +231,7 @@ footer {
   font-family: 'Noto Serif JP', serif;
   color: #444;
   font-weight: 700;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   animation-name: noticeFade;
   animation-duration: 3s;
   animation-timing-function: linear;
@@ -249,30 +239,27 @@ footer {
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
-
 }
 
 @keyframes noticeFade {
   /*animetion-nameで設定した値を書く*/
 
   0% {
-    opacity: 1
+    opacity: 1;
   }
 
   /*アニメーション開始時は不透明度0%*/
 
   100% {
-    opacity: 0
+    opacity: 0;
   }
 
   /*アニメーション終了時は不透明度100%*/
-
 }
 
 .text-3d {
   color: #444;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, .6),
-    0 -2px 0 rgba(255, 255, 255, 1);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 -2px 0 rgba(255, 255, 255, 1);
 }
 
 .poeet-text-area {
@@ -283,17 +270,22 @@ footer {
   border-radius: 9px;
   border: none;
   background: #efefef;
-  box-shadow: inset 6px 6px 12px #d9d9d9,
-    inset -6px -6px 12px #ffffff;
+  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
   font-family: 'Noto Serif JP', serif;
   color: #444;
   font-weight: 700;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   text-align: left;
 }
-
 
 .loginLogout {
   text-align: right;
   margin-top: 20px;
+}
+
+.poeet-user {
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
 }

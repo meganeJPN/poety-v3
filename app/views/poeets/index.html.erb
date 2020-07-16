@@ -9,10 +9,12 @@
       <% @poeets.each do |poeet| %>
         <div class="poeet-box">
           <div class = "poeet-body">
+          <p class="poeet-user"><%= poeet.user.name %></p>
             <div class="poeet-content">
               <p class="poeet-text"> <%= poeet.content %></p>
             </div>
           </div>
+          
           <div class="poeet-footer">
             <div class="poeet-edit">
               <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>

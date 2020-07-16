@@ -2,7 +2,7 @@ class PoeetsController < ApplicationController
   before_action :set_poeet, only: [:edit, :update,:destroy]
   def index
     @poeets = Poeet.all.order(id: :desc)
-    @user = User.find(@poeets.first.user_id)
+    @user = current_user
     # binding.pry
     # @user = User.find(@poeets.first.user_id)
     
