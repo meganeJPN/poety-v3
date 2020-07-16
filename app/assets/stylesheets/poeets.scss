@@ -55,11 +55,13 @@ footer {
   top: 0px;
   left: 0px;
   // padding: 60px 20px;
+  display: flex;
   position: fixed;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: 40px;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   width: 100%;
 }
 
@@ -103,6 +105,16 @@ footer {
   margin-left: 20px;
   margin-right: 20px;
 
+}
+
+.poeet-btn-small {
+  // display: block;
+  // text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: small;
 }
 
 .poetry-section {
@@ -278,4 +290,10 @@ footer {
   font-weight: 700;
   letter-spacing: .5rem;
   text-align: left;
+}
+
+
+.loginLogout {
+  text-align: right;
+  margin-top: 20px;
 }
