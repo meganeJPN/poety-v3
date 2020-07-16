@@ -14,7 +14,7 @@
       <h1 class="text-3d">Poety</h1>
       <div class="loginLogout">
         <% if logged_in? %>
-          <%= link_to "プロフィール", user_path(current_user.id),class: "poeet-btn poeet-btn-small" %>
+          <%= link_to "#{@user.name}", user_path(current_user.id),class: "poeet-btn poeet-btn-small" %>
           <%= link_to "ログアウト", session_path(current_user.id), method: :delete,class: "poeet-btn poeet-btn-small" %>
         <% else %>
           <%= link_to "サインアップ", new_user_path,class: "poeet-btn poeet-btn-small" %>
