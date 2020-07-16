@@ -1,8 +1,6 @@
 
 <section class="poetry-section">
-  <div class="poeet-notice">
-    <p class="flash"><%= notice %></p>
-  </div>
+  
   <div class="modal fade" id="poeet-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
     <div>
       <%= link_to 'ポイートする', new_poeet_path , remote: true, class: "poeet-btn poeet-btn-big" %>
@@ -16,12 +14,14 @@
           </div>
           
           <div class="poeet-footer">
+            <% if poeet.user_id == current_user.id%>
             <div class="poeet-edit">
               <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>
             </div>
             <div class = "poeet-delete">
               <%= link_to "削除",poeet_path(poeet.id),method: :delete,data: {confirm: '本当に削除していいですか？'},remote: true,class: "poeet-btn" %>
             </div>
+              <% end%>
           </div>
         </div>
       <% end %>

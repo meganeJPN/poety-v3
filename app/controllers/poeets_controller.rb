@@ -33,23 +33,49 @@ class PoeetsController < ApplicationController
     end
   end
 
-  def edit
+  def edits
+     if @poeet.user_id != current_user.id
+      redirect_to poeets_path, notice: "あなたのポイートではありません"
+    end
   end
 
   def destroy
-    @poeet.destroy
-    redirect_to poeets_path,notice:"ポイートを削除しました"
+    # binding.pry
+    if @poeet.user_id == current_user.id
+      @poeet.destroy
+      redirect_to poeets_path,notice:"ポイートを削除しました"
+    else
+      redirect_to poeets_path, notice: "あなたのポイートではないので削除できません。"
+    end
+    
   end
+
+  # def update
+  #   if params[:back]
+  #     render :edit
+  #   else
+  #     if @poeet.update(poeet_params)
+  #       redirect_to poeets_path,notice: "ポイートを編集しました"
+  #     else
+  #       render :edit
+  #     end
+  #   end
+  # end
 
   def update
     if params[:back]
       render :edit
     else
-      if @poeet.update(poeet_params)
-        redirect_to poeets_path,notice: "ポイートを編集しました"
+      if @poeet.user_id == current_user.id
+        if @poeet.update(poeet_params)
+          redirect_to poeets_path,notice: "ポイートを編集しました"
+        else
+          render :edit
+        end
       else
-        render :edit
+        redirect_to poeets_path,notice: "あなたのポイートではありません"
       end
+      
     end
   end
 

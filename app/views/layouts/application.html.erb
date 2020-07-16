@@ -12,6 +12,12 @@
   <body>
     <header class="poeet-header">
       <h1 class="text-3d">Poety</h1>
+      <div class="poeet-notice">
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key} flash") %>
+    <% end %>
+        
+      </div>
       <div class="loginLogout">
         <% if logged_in? %>
           <%= link_to "#{@user.name}", user_path(current_user.id),class: "poeet-btn poeet-btn-small" %>
@@ -22,9 +28,7 @@
         <% end %>
       </div>
     </header>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    
    
     <%= yield %>
   </body>
