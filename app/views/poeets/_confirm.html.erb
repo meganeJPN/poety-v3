@@ -14,11 +14,20 @@
       <div class="modal-body">
         <%= form.hidden_field :content %>
           <div class = "poeet-body">
-            <div class="poeet-content">
+          <% if @poeet.image? %>
+            <div class="poeet-content" style="background:url(<%= @poeet.image.thumb %>)">
+                <div style = "background-color:rgba(0,0,0,0.6); height:400px; width:400px">
+                 <p class="poeet-text" style="color:#FFFFFF"> <%= @poeet.content %></p>
+                </div>
+                 <%= form.hidden_field :image_cache %>
+              </div>
+
+             
+          <% else %>
+           <div class="poeet-content">
               <p class="poeet-text"> <%= @poeet.content %></p>
-              <%= image_tag @poeet.image.thumb.url if @poeet.image? %>
-              <%= form.hidden_field :image_cache %>
-            </div>
+           </div>
+          <% end %>
           </div>
           <div class="modal-footer actions poeet-footer-confirm">
             <div class = "poeet-delete">

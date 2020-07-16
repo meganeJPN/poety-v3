@@ -3,7 +3,6 @@ class PoeetsController < ApplicationController
   def index
     @poeets = Poeet.all.order(id: :desc)
     @user = current_user
-    # binding.pry
     # @user = User.find(@poeets.first.user_id)
     
   end

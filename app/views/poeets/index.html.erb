@@ -1,36 +1,36 @@
 
 <section class="poetry-section">
-  
   <div class="modal fade" id="poeet-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-    <div>
       <%= link_to 'ポイートする', new_poeet_path , remote: true, class: "poeet-btn poeet-btn-big" %>
       <% @poeets.each do |poeet| %>
         <div class="poeet-box">
           <div class = "poeet-body">
-          <p class="poeet-user"><%= poeet.user.name %></p>
-            <div class="poeet-content">
-              <p class="poeet-text"> <%= poeet.content %></p>
-             <% if poeet.image? %>
-　　            <%= image_tag poeet.image.thumb.url %>
-　            <% else %>
-　　            
-　            <% end %> 
-            </div>
+            <p class="poeet-user"><%= poeet.user.name %></p>
+            <% if poeet.image? %>
+              <div class="poeet-content" style="background:url(<%= poeet.image.thumb %>)">
+                <div style = "background-color:rgba(0,0,0,0.6); height:400px; width:400px">
+                 <p class="poeet-text" style="color:#FFFFFF"> <%= poeet.content %></p>
+                </div>
+              </div>
+            <% else %>
+              <div class="poeet-content">
+                <p class="poeet-text"> <%= poeet.content %></p>
+              </div>
+            <% end %>
           </div>
           
           <div class="poeet-footer">
             <% if poeet.user_id == current_user.id%>
-            <div class="poeet-edit">
-              <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>
-            </div>
-            <div class = "poeet-delete">
-              <%= link_to "削除",poeet_path(poeet.id),method: :delete,data: {confirm: '本当に削除していいですか？'},remote: true,class: "poeet-btn" %>
-            </div>
-              <% end%>
+              <div class="poeet-edit">
+                <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>
+              </div>
+              <div class = "poeet-delete">
+                <%= link_to "削除",poeet_path(poeet.id),method: :delete,data: {confirm: '本当に削除していいですか？'},remote: true,class: "poeet-btn" %>
+              </div>
+            <% end%>
           </div>
         </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </section>
 <footer>
