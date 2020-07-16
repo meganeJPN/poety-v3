@@ -103,7 +103,7 @@ class PoeetsController < ApplicationController
 
   private
   def poeet_params
-    params.require(:poeet).permit(:id, :content)
+    params.require(:poeet).permit(:id, :content, :image, :image_cache)
   end
 
   def set_poeet

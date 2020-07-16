@@ -10,6 +10,11 @@
           <p class="poeet-user"><%= poeet.user.name %></p>
             <div class="poeet-content">
               <p class="poeet-text"> <%= poeet.content %></p>
+             <% if poeet.image? %>
+　　            <%= image_tag poeet.image.thumb.url %>
+　            <% else %>
+　　            
+　            <% end %> 
             </div>
           </div>
           

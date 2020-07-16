@@ -24,6 +24,10 @@
       <div class="modal-body">
         <div class="form-group field">
           <%= form.text_area :content,class: "poeet-text-area" %>
+          <%= form.label :image %>
+　        <%= image_tag @poeet.image.thumb.url if @poeet.image? %>
+　        <%= form.file_field :image %>
+          <%= form.hidden_field :image_cache %>
         </div>
       </div>
       <div class="modal-footer actions ">

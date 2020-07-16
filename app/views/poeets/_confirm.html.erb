@@ -16,17 +16,22 @@
           <div class = "poeet-body">
             <div class="poeet-content">
               <p class="poeet-text"> <%= @poeet.content %></p>
+              <%= image_tag @poeet.image.thumb.url if @poeet.image? %>
+              <%= form.hidden_field :image_cache %>
             </div>
           </div>
           <div class="modal-footer actions poeet-footer-confirm">
-            <div class="poeet-edit">
-              <%= form.submit('戻る',class: 'poeet-btn',name: 'back')%>
-            </div>
             <div class = "poeet-delete">
               <%= form.submit('ポイート',class: 'poeet-btn') %>
             </div>
+    
+            <div class="poeet-edit">
+              <%= form.submit('戻る',class: 'poeet-btn',name: 'back')%>
+            </div>
+            
           </div>
-        <% end %>
+        
       </div?>
+    <% end %>
   </div>
 </div>
