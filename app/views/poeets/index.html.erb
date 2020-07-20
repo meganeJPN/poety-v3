@@ -1,7 +1,9 @@
 
 <section class="poetry-section">
   <div class="modal fade" id="poeet-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-      <%= link_to 'ポイートする', new_poeet_path , remote: true, class: "poeet-btn poeet-btn-big" %>
+      <% if current_user %>
+        <%= link_to 'ポイートする', new_poeet_path , remote: true, class: "poeet-btn poeet-btn-big" %>
+      <% end %>
       <% @poeets.each do |poeet| %>
         <div class="poeet-box">
           <div class = "poeet-body">
