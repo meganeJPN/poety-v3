@@ -3,8 +3,6 @@ class PoeetsController < ApplicationController
   def index
     @poeets = Poeet.all.order(id: :desc)
     @user = current_user
-    # @user = User.find(@poeets.first.user_id)
-    
   end
 
   def new
@@ -39,27 +37,13 @@ class PoeetsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     if @poeet.user_id == current_user.id
       @poeet.destroy
       redirect_to poeets_path,notice:"ポイートを削除しました"
     else
       redirect_to poeets_path, notice: "あなたのポイートではないので削除できません。"
     end
-    
   end
-
-  # def update
-  #   if params[:back]
-  #     render :edit
-  #   else
-  #     if @poeet.update(poeet_params)
-  #       redirect_to poeets_path,notice: "ポイートを編集しました"
-  #     else
-  #       render :edit
-  #     end
-  #   end
-  # end
 
   def update
     if params[:back]
@@ -74,7 +58,6 @@ class PoeetsController < ApplicationController
       else
         redirect_to poeets_path,notice: "あなたのポイートではありません"
       end
-      
     end
   end
 

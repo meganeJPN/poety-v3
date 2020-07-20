@@ -20,9 +20,7 @@
                  <p class="poeet-text" style="color:#FFFFFF"> <%= @poeet.content %></p>
                 </div>
                  <%= form.hidden_field :image_cache %>
-              </div>
-
-             
+              </div>   
           <% else %>
            <div class="poeet-content">
               <p class="poeet-text"> <%= @poeet.content %></p>
@@ -33,13 +31,10 @@
             <div class = "poeet-delete">
               <%= form.submit('ポイート',class: 'poeet-btn') %>
             </div>
-    
             <div class="poeet-edit">
               <%= form.submit('戻る',class: 'poeet-btn',name: 'back')%>
             </div>
-            
           </div>
-        
       </div?>
     <% end %>
   </div>
