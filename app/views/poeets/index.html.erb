@@ -20,7 +20,7 @@
           </div>
           
           <div class="poeet-footer">
-            <% if poeet.user_id == current_user.id%>
+            <% if current_user && poeet.user_id == current_user.id%>
               <div class="poeet-edit">
                 <%= link_to "編集",edit_poeet_path(poeet.id) ,remote: true,class: "poeet-btn" %>
               </div>
