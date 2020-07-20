@@ -11,7 +11,9 @@
 
   <body>
     <header class="poeet-header">
-      <h1 class="text-3d">Poety</h1>
+      <h1>
+      <%= link_to "Poety",poeets_path,class:"text-3d" %>
+      </h1>
       <div class="poeet-notice">
       <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key} flash") %>
