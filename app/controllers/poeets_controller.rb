@@ -1,5 +1,5 @@
 class PoeetsController < ApplicationController
-  before_action :set_poeet, only: [:edit, :update,:destroy]
+  before_action :set_poeet, only: [:edit, :update,:destroy, :show]
   def index
     @poeets = Poeet.all.order(id: :desc)
     @user = current_user
@@ -30,7 +30,10 @@ class PoeetsController < ApplicationController
     end
   end
 
-  def edits
+  def show
+  end
+
+  def edit
      if @poeet.user_id != current_user.id
       redirect_to poeets_path, notice: "あなたのポイートではありません"
     end
