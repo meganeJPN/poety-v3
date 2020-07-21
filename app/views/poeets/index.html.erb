@@ -9,11 +9,13 @@
           <div class = "poeet-body">
             <p class="poeet-user"><%= poeet.user.name %></p>
             <% if poeet.image? %>
-              <div class="poeet-content" style="background:url(<%= poeet.image.thumb %>)">
-                <div style = "background-color:rgba(0,0,0,0.6); height:400px; width:400px">
-                 <p class="poeet-text" style="color:#FFFFFF"> <%= poeet.content %></p>
+              <%= link_to poeet_path(poeet.id),remote: true do%>
+                <div class="poeet-content" style="background:url(<%= poeet.image.thumb %>)">
+                  <div style = "background-color:rgba(0,0,0,0.6); height:400px; width:400px">
+                    <p class="poeet-text" style="color:#FFFFFF"> <%= poeet.content %></p>
+                  </div>
                 </div>
-              </div>
+              <% end%>
             <% else %>
               <div class="poeet-content">
                 <p class="poeet-text"> <%= poeet.content %></p>

@@ -31,6 +31,10 @@ class PoeetsController < ApplicationController
   end
 
   def show
+    respond_to do |format| 
+      format.html{ redirect_to @poeet }
+      format.js {} 
+    end
   end
 
   def edit
