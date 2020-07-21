@@ -1,3 +1,4 @@
-<h1><%= @user.name %>のページ</h1>
+<h1 class = "text-3d"><%= @user.name %>のプロフィール</h1>
 <%= image_tag @user.image.thumb.url %>
-<p>メールアドレス: <%= @user.email %></p>
+<p class = "poeet-font-main"><span class="poeet-font-sub"><%= @user.email %></span></p>
+<%= link_to "プロフィールを編集する", edit_user_path(@user.id),class: "poeet-btn" %>
