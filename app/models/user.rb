@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :poeets
+  has_many :favorites,dependent: :destroy
+  # has_many :favorite_poeets, through: :favorites, source: :poeet
   before_validation { email.downcase! }
   validates :name, presence: true, length: {maximum: 30}
   validates :email, presence: true, length: {maximum: 255},

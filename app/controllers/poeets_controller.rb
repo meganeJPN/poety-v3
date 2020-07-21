@@ -3,6 +3,7 @@ class PoeetsController < ApplicationController
   def index
     @poeets = Poeet.all.order(id: :desc)
     @user = current_user
+    @favorites = current_user.favorites
   end
 
   def new
