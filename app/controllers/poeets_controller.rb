@@ -16,11 +16,13 @@ class PoeetsController < ApplicationController
 
   def create
     @poeet = current_user.poeets.build(poeet_params)
+    @user = current_user
     respond_to do |format|
       if params[:back]
         format.js {render :new} 
       else
         if @poeet.save
+          ContactMailer.contact_mail(@poeet).deliver  ##追記
           format.js {redirect_to poeets_path,notice: 'ポイートしました'}
         else
           format.html { render :new }
