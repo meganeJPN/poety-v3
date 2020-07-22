@@ -1,0 +1,41 @@
+
+<section class="poetry-section">
+  <div class="modal fade" id="poeet-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+      <% @favorites.each do |favorite| %>
+        <div class="poeet-box">
+          <div class = "poeet-body">
+            <div class="poeet-body-header">
+            <p class="poeet-user"><%= favorite.poeet.user.name %></p>
+            <% unless current_user && favorite.poeet.user_id == current_user.id%>
+              <% if favorite.present? %>
+                <%= link_to favorite_path(id: favorite.id), method: :delete do%>
+                  	<i class="fa fa-star fa-2x star_yellow" aria-hidden="true"></i>
+                <% end%>
+              <% else%>
+                <%= link_to favorites_path(poeet_id: favorite.poeet.id), method: :post do%>
+                  <i class="fa fa-star fa-2x star_gray" aria-hidden="true"></i>
+                <% end %>
+              <% end%>
+            <% end%>
+            </div>
+            <% if favorite.poeet.image? %>
+              <%= link_to poeet_path(favorite.poeet.id),remote: true do%>
+                <div class="poeet-content" style="background:url(<%= favorite.poeet.image.thumb %>)">
+                  <div style = "background-color:rgba(0,0,0,0.6); height:400px; width:400px">
+                    <p class="poeet-text" style="color:#FFFFFF"> <%= favorite.poeet.content %></p>
+                  </div>
+                </div>
+              <% end%>
+            <% else %>
+              <div class="poeet-content">
+                <p class="poeet-text"> <%= favorite.poeet.content %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</section>
+<footer>
+  <div class="copyright"><small>© 2020 INKFISH</small></div>
+</footer>

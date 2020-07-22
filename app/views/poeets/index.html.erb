@@ -13,11 +13,11 @@
               <% favorite = @favorites.find_by(poeet_id: poeet.id) %>
               <% if favorite.present? %>
                 <%= link_to favorite_path(id: favorite.id), method: :delete do%>
-                  	<i class="fa fa-star fa-2x star_gray" aria-hidden="true"></i>
+                  	<i class="fa fa-star fa-2x star_yellow" aria-hidden="true"></i>
                 <% end%>
               <% else%>
                 <%= link_to favorites_path(poeet_id: poeet.id), method: :post do%>
-                  <i class="fa fa-star fa-2x star_yellow" aria-hidden="true"></i>
+                  <i class="fa fa-star fa-2x star_gray" aria-hidden="true"></i>
                 <% end %>
               <% end%>
             <% end%>
