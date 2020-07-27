@@ -2,8 +2,10 @@ class PoeetsController < ApplicationController
   before_action :set_poeet, only: [:edit, :update,:destroy, :show]
   def index
     @poeets = Poeet.all.order(id: :desc)
-    @user = current_user
-    @favorites = current_user.favorites
+    if current_user
+      @user = current_user
+      @favorites = current_user.favorites
+    end
   end
 
   def new
