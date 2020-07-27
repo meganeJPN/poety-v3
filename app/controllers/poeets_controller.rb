@@ -24,7 +24,11 @@ class PoeetsController < ApplicationController
         format.js {render :new} 
       else
         if @poeet.save
-          ContactMailer.contact_mail(@poeet).deliver  ##追記
+          begin
+            ContactMailer.contact_mail(@poeet).deliver  ##追記
+          rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
+            Rails.logger.error("failed send mail. #{e.message}")
+          end
           format.js {redirect_to poeets_path,notice: 'ポイートしました'}
         else
           format.html { render :new }
