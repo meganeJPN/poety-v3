@@ -2,8 +2,8 @@
 <% if @user.image?%>
   <%= image_tag @user.image.thumb.url %>
 <% end %>
-<p class = "poeet-font-main"><span class="poeet-font-sub"><%= @user.email %></span></p>
 <% if @user == current_user%>
+  <p class = "poeet-font-main"><span class="poeet-font-sub"><%= @user.email %></span></p>
   <%= link_to "お気に入り一覧", favorites_path,class: "poeet-btn poeet-btn-big" %>
   <%= link_to "プロフィールを編集する", edit_user_path(@user.id),class: "poeet-btn poeet-btn-big" %>
 <% end %>
