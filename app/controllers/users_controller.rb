@@ -19,10 +19,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # unless @user.id == current_user.id then
-    #   redirect_to poeets_path,notice:"他のユーザのプロフィールは編集できません。"
-    #   return "other user profike"
-    # end
+    binding.pry
+    unless @user.id == current_user.id then
+      redirect_to poeets_path,notice:"他のユーザのプロフィールは編集できません。"
+      return "other user profike"
+    end
   end
 
   def update
