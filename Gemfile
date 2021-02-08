@@ -12,7 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'mini_magick', '~> 4.8'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rename'
 
